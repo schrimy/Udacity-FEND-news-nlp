@@ -1,8 +1,22 @@
-var path = require('path')
+const dotenv = require('dotenv')
+dotenv.config()
+
+const path = require('path')
+const aylien = require('aylien_textapi')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
 const app = express()
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+
+//Aylien api setup
+const aylienApi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+})
 
 app.use(express.static('dist'))
 
@@ -20,4 +34,20 @@ app.listen(8081, function () {
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
+})
+
+//Alyien post request
+app.post('/apiRequest', (req, res) => {
+    const reqUrl = req.body.url;
+
+    console.log('api url: '+reqUrl)
+    
+    aylienApi.summarize({
+        url: reqUrl,
+        sentence_number: 3
+    }, function(error, response) {
+        if (error === null){
+            res.send(response)
+        }
+    })
 })
