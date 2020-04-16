@@ -42,12 +42,12 @@ app.post('/apiRequest', (req, res) => {
 
     console.log('api url: '+reqUrl)
     
-    aylienApi.summarize({
-        url: reqUrl,
-        sentence_number: 3
-    }, function(error, response) {
+    aylienApi.combined({
+        'url': reqUrl,
+        'endpoint': ['sentiment', 'extract'] 
+    }, function(error, result) {
         if (error === null){
-            res.send(response)
+            res.send(result.results)
         }
     })
 })

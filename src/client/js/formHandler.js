@@ -9,9 +9,10 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
    
+    // TODO: when setting up regex checks here, place promises in apiHandler and update to function
     Client.postData('/apiRequest', {url: testUrl})
     .then((data) => {
-        console.log('returned article data: '+data.sentences)
+        console.log('returned article data: '+JSON.stringify(data[0].result.article) + ' sentiment '+JSON.stringify(data[1].result.polarity))
     })
 }
 
