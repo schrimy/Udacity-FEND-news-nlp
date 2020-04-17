@@ -31,4 +31,5 @@ function displayData(articleData) {
     ${articleText}`
 }
 
+module.exports = displayData
 export { nlpRequest }

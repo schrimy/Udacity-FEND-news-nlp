@@ -1,0 +1,1 @@
+const displayData = require('./../src/client/js/apiHandler')
