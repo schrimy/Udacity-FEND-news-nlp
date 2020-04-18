@@ -5,6 +5,14 @@ function nlpRequest(formUrl) {
     })
 }
 
+function displayData(articleData) {
+    const articleText = articleData[0].result.article
+    const articlePol = articleData[1].result.polarity
+
+    document.getElementById('results').innerText = `${articlePol}
+    ${articleText}`
+}
+
 const postData = async (url = '', data = {}) => {
     const res = await fetch(url, {
         method: 'POST',
@@ -21,14 +29,6 @@ const postData = async (url = '', data = {}) => {
     } catch (error) {
         console.log('error', error)
     }
-}
-
-function displayData(articleData) {
-    const articleText = articleData[0].result.article
-    const articlePol = articleData[1].result.polarity
-
-    document.getElementById('results').innerText = `${articlePol}
-    ${articleText}`
 }
 
 module.exports = displayData
