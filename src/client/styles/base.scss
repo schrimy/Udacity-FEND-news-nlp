@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100vw;
+    align-items: center;
 }
 
 main {
@@ -9,6 +11,17 @@ main {
 }
 
 section {
+    border: 1px solid #545454;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 10% 2%;
+
+    &.article-data {
+        border: 0;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .polarity {
+        margin-bottom: 15px;
+    }
 }
