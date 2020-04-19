@@ -8,9 +8,13 @@ import './styles/form.scss'
 import './styles/header.scss'
 import './styles/footer.scss'
 
+//import images
+import newspaper from './images/newspaper.jpg'
+
 export {
     handleSubmit,
-    nlpRequest
+    nlpRequest,
+    newspaper
 }
 
 console.log("CHANGE!!");

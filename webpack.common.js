@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack')
 
 module.exports = {
     entry: './src/client/index.js',
@@ -16,6 +17,13 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: "file-loader",
+                options: {
+                    name: '[name].[ext]'
+                }
             }
         ]
     },
@@ -32,6 +40,15 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
+        }),
+        new ImageminPlugin({
+            bail: false,
+            cache: true,
+            imageminOptions: {
+                plugins: [
+                    ['mozjpeg', { quality: 70 }]
+                ]
+            }
         })
     ]
 }

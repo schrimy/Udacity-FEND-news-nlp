@@ -1,3 +1,5 @@
+@import 'colours.scss';
+
 form {
     padding: 40px;
 }
@@ -7,4 +9,19 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+
+    &#submit-btn {
+        border: 1px solid $primary;
+        border-radius: 1em;
+
+        &:hover {
+            background: $primary;
+            color: $secondary;
+        }
+
+        &:active {
+            background: $secondary;
+            color: $primary;
+        }
+    }
 }

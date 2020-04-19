@@ -31,5 +31,5 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
-module.exports = displayData
+//module.exports = displayData
 export { nlpRequest }
