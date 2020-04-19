@@ -24,5 +24,5 @@ function checkUrl(url) {
     }
 }
 
-//module.exports = checkUrl
+module.exports = checkUrl
 export { handleSubmit }
