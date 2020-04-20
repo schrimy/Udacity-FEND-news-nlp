@@ -12,3 +12,13 @@ describe('display data' , () => {
         expect(displayData(data)).toBe(undefined)
     })
 })
+
+describe('display data' , () => {
+    test('should return undefined after catching undefined field', () => {
+        const data = undefined
+
+        document.body.innerHTML = `<div class="polarity"></div><div class="extra"></div><article></article>`
+
+        expect(displayData(data)).toBe(undefined)
+    })
+})

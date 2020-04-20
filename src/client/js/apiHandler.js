@@ -6,11 +6,21 @@ function nlpRequest(formUrl) {
 }
 
 function displayData(articleData) {
-    //parse json from api query
-    const articleText = articleData[2].result.sentences
-    const articlePol = articleData[1].result.polarity
-    const articleSub = articleData[1].result.subjectivity
-    const articleLang = articleData[0].result.lang
+    let articleText
+    let articlePol
+    let articleSub
+    let articleLang
+
+    //parse json from api query and catch any errors
+    try {
+        articleText = articleData[2].result.sentences
+        articlePol = articleData[1].result.polarity
+        articleSub = articleData[1].result.subjectivity
+        articleLang = articleData[0].result.lang
+    } catch (error) {
+        alert('There was an error with the url please try again or another url')
+        return
+    }
 
     //dom objects to manipulate
     const pol = document.querySelector('.polarity')
