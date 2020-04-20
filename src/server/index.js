@@ -44,9 +44,10 @@ app.post('/apiRequest', (req, res) => {
     
     aylienApi.combined({
         'url': reqUrl,
-        'endpoint': ['sentiment', 'extract'] 
+        'endpoint': ['language', 'sentiment', 'summarize'] 
     }, function(error, result) {
         if (error === null){
+            console.log('sending: '+JSON.stringify(result.results))
             res.send(result.results)
         }
     })

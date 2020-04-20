@@ -6,11 +6,27 @@ function nlpRequest(formUrl) {
 }
 
 function displayData(articleData) {
-    const articleText = articleData[0].result.article
+    //parse json from api query
+    const articleText = articleData[2].result.sentences
     const articlePol = articleData[1].result.polarity
+    const articleSub = articleData[1].result.subjectivity
+    const articleLang = articleData[0].result.lang
 
-    document.getElementById('results').innerText = `${articlePol}
-    ${articleText}`
+    //dom objects to manipulate
+    const pol = document.querySelector('.polarity')
+    const extra = document.querySelector('.extra')
+    const article = document.querySelector('article')
+
+    //populate dom objects
+    pol.innerText = `This article is ${articlePol}`
+
+    extra.innerText = `Subjectivity: ${articleSub}
+    Language: ${articleLang}`
+
+    article.innerText = ''
+    articleText.forEach(sentence => {
+        article.innerHTML += `<p>${sentence}</p>`;
+    })
 }
 
 const postData = async (url = '', data = {}) => {
@@ -31,5 +47,5 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
-//module.exports = displayData
+module.exports = displayData
 export { nlpRequest }
