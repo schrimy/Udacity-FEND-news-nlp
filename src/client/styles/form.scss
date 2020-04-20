@@ -13,6 +13,9 @@ input {
     &#submit-btn {
         border: 1px solid $primary;
         border-radius: 1em;
+        font-family: 'Roboto Slab', serif, Arial;
+        font-weight: 800;
+        text-transform: uppercase;
 
         &:hover {
             background: $primary;

@@ -20,7 +20,7 @@ section {
     border-radius: 0.5em;
     max-width: 800px;
     margin: 5% 2%;
-    background: rgba($color: #000, $alpha: 0.8);
+    background: rgba($color: $primary, $alpha: 0.8);
 
     &.article-data {
         border: 0;
@@ -28,5 +28,11 @@ section {
         padding: 10px;
         background: 0;
         color: $secondary;
+        font-family: 'Roboto Slab', serif, Arial;
+
+        article {
+            margin-top: 25px;
+            line-height: 1.5em;
+        }
     }
 }
