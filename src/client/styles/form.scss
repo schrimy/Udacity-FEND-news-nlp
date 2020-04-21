@@ -27,4 +27,18 @@ input {
             color: $primary;
         }
     }
+
+    &#articleUrl {
+        &.error-text::placeholder { /* Firefox, Chrome, Opera */
+            color: red;
+        }
+          
+        &.error-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: red;
+        }
+          
+        &.error-text::-ms-input-placeholder { /* Microsoft Edge */
+            color: red;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+//starts promises to run api url request when form has been submitted
 function nlpRequest(formUrl) {
     postData('/apiRequest', {url: formUrl})
     .then((data) => {
@@ -8,6 +9,7 @@ function nlpRequest(formUrl) {
     })
 }
 
+//data passed on from api request gets parsed and populates relevant elements
 function displayData(articleData) {
     let articleText
     let articlePol
@@ -36,12 +38,14 @@ function displayData(articleData) {
     extra.innerText = `Subjectivity: ${articleSub}
     Language: ${articleLang}`
 
+    //runs through array of returned sentences and adds to html element
     article.innerText = ''
     articleText.forEach(sentence => {
         article.innerHTML += `<p>${sentence}</p>`;
     })
 }
 
+//set up for post request on the server to make api request
 const postData = async (url = '', data = {}) => {
     const res = await fetch(url, {
         method: 'POST',
@@ -60,5 +64,6 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
+//uncomment the module export for running test npm script
 //module.exports = displayData
 export { nlpRequest }

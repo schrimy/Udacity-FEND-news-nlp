@@ -13,10 +13,9 @@ import './styles/footer.scss'
 //import images
 import './images/newspaper.jpg'
 
+//export js functions for use within the app
 export {
     handleSubmit,
     onBlur,
     nlpRequest,
 }
-
-console.log("CHANGE!!");

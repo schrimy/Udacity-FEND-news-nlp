@@ -1,6 +1,5 @@
 const displayData = require('./../src/client/js/apiHandler')
-
-
+//test to make sure the displayData function runs as expected
 describe('display data' , () => {
     test('should return undefined if no errors', () => {
         const data = [{'result': { 'lang': 'one' }},
@@ -13,6 +12,7 @@ describe('display data' , () => {
     })
 })
 
+//test to see if the displayData function handles incomplete data
 describe('display data' , () => {
     test('should return undefined after catching undefined field', () => {
         const data = undefined
