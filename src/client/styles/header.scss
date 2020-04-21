@@ -5,4 +5,9 @@ header {
     flex-direction: row;
     align-items: flex-end;
     width: 100%;
+
+    @media (min-width: 950px) {
+        align-self: center;
+        width: 950px;
+    }
 }

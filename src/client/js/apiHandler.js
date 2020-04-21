@@ -3,6 +3,9 @@ function nlpRequest(formUrl) {
     .then((data) => {
         displayData(data)
     })
+    .catch(err => {
+        alert('Please check internet connection')
+    })
 }
 
 function displayData(articleData) {
@@ -57,5 +60,5 @@ const postData = async (url = '', data = {}) => {
     }
 }
 
-module.exports = displayData
+//module.exports = displayData
 export { nlpRequest }

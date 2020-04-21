@@ -1,8 +1,10 @@
+const urlValue = document.getElementById('articleUrl')
+
 function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    let formText = urlValue.value
 
     console.log("::: Form Submitted :::")
     if(!checkUrl(formText)){
@@ -10,6 +12,14 @@ function handleSubmit(event) {
         return
     } else {
         Client.nlpRequest(formText)
+    }
+}
+
+function onBlur(){
+    const url = urlValue.value
+
+    if(!checkUrl(url)){
+        alert('Please check entered url')
     }
 }
 
@@ -24,5 +34,6 @@ function checkUrl(url) {
     }
 }
 
-module.exports = checkUrl
+//module.exports = checkUrl
+export { onBlur }
 export { handleSubmit }
