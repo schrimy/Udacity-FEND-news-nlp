@@ -46,7 +46,8 @@ module.exports = {
             cache: true,
             imageminOptions: {
                 plugins: [
-                    ['mozjpeg', { quality: 70 }]
+                    ['mozjpeg', { quality: 70 }],
+                    ['pngquant', {quality: [0.7, 0.8]}]
                 ]
             }
         })

@@ -12,6 +12,7 @@ import './styles/footer.scss'
 
 //import images
 import './images/newspaper.jpg'
+import './images/logo.png'
 
 //export js functions for use within the app
 export {

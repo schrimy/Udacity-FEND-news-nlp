@@ -34,15 +34,12 @@ app.listen(8081, function () {
 //Alyien post request
 app.post('/apiRequest', (req, res) => {
     const reqUrl = req.body.url;
-
-    console.log('api url: '+reqUrl)
     
     aylienApi.combined({
         'url': reqUrl,
         'endpoint': ['language', 'sentiment', 'summarize'] 
     }, function(error, result) {
         if (error === null){
-            console.log('sending: '+JSON.stringify(result.results))
             res.send(result.results)
         }
     })

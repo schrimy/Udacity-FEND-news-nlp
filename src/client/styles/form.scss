@@ -9,12 +9,12 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+    font-family: 'Roboto Slab', serif, Arial;
+    font-weight: 800;
 
     &#submit-btn {
         border: 1px solid $primary;
         border-radius: 1em;
-        font-family: 'Roboto Slab', serif, Arial;
-        font-weight: 800;
         text-transform: uppercase;
 
         &:hover {
