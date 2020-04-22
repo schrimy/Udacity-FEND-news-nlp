@@ -1,11 +1,24 @@
+// Globals
+const pol = document.querySelector('.polarity')
+const extra = document.querySelector('.extra')
+const article = document.querySelector('article')
+
 //starts promises to run api url request when form has been submitted
 function nlpRequest(formUrl) {
+    const prompt = document.querySelector('#prompt')
+    prompt.innerText = 'Loading...'
+    prompt.setAttribute('style', 'display: block')
+
+    clearData()
+
     postData('/apiRequest', {url: formUrl})
     .then((data) => {
+        prompt.setAttribute('style', 'display: none')
         displayData(data)
     })
     .catch(err => {
-        alert('Please check internet connection')
+        prompt.setAttribute('style', 'display: none')
+        alert('Please check internet connection and URL used')
     })
 }
 
@@ -27,11 +40,6 @@ function displayData(articleData) {
         return
     }
 
-    //dom objects to manipulate
-    const pol = document.querySelector('.polarity')
-    const extra = document.querySelector('.extra')
-    const article = document.querySelector('article')
-
     //populate dom objects
     pol.innerText = `This article is ${articlePol}`
 
@@ -43,6 +51,13 @@ function displayData(articleData) {
     articleText.forEach(sentence => {
         article.innerHTML += `<p>${sentence}</p>`;
     })
+}
+
+//clear article fields when loading another url
+function clearData() {
+    pol.innerText = ''
+    extra.innerText = ''
+    article.innerText = ''
 }
 
 //set up for post request on the server to make api request

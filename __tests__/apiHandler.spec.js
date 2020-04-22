@@ -1,5 +1,6 @@
 import { displayData } from './../src/client/js/apiHandler'
 //test to make sure the displayData function runs as expected
+
 describe('display data' , () => {
     test('should return undefined if no errors', () => {
         const data = [{'result': { 'lang': 'one' }},

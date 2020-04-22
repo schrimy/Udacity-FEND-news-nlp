@@ -3,8 +3,7 @@ const urlValue = document.getElementById('articleUrl')
 //handles form submit from input field
 function handleSubmit(event) {
     event.preventDefault()
-
-    document.querySelector('#prompt').remove()
+    
     // check what text was put into the form field
     let formText = urlValue.value
 

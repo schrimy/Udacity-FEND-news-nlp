@@ -1,6 +1,9 @@
 {
   "name": "example-project",
   "jest": {
+    "globals": {
+      "pol": true
+    },
     "setupFiles": [
       "./__mocks__/client.js"
     ]
