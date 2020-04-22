@@ -1,4 +1,4 @@
-const checkUrl = require('./../src/client/js/formHandler')
+import { checkUrl } from './../src/client/js/formHandler'
 import { TestScheduler } from 'jest'
 
 //test to see if the checkUrl function runs as expected

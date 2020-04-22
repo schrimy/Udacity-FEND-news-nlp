@@ -42,6 +42,6 @@ function checkUrl(url) {
 }
 
 //uncomment the module export for running test npm script
-//module.exports = checkUrl
+export { checkUrl }
 export { onBlur }
 export { handleSubmit }

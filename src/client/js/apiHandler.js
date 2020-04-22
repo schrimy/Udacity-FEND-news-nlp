@@ -65,5 +65,5 @@ const postData = async (url = '', data = {}) => {
 }
 
 //uncomment the module export for running test npm script
-//module.exports = displayData
+export { displayData }
 export { nlpRequest }
