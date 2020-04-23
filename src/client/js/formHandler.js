@@ -7,7 +7,6 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = urlValue.value
 
-    console.log("::: Form Submitted :::")
     if(!checkUrl(formText)) {
         alert('Please check entered url and try again')
         return
@@ -20,7 +19,7 @@ function handleSubmit(event) {
 function onBlur() {
     const url = urlValue.value
 
-    if(!checkUrl(url) && url !== ''){
+    if(!checkUrl(url)){
         urlValue.value = ''
         urlValue.classList.add('error-text')
         urlValue.setAttribute('placeholder', 'Enter valid url')

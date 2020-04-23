@@ -1,6 +1,7 @@
 import { handleSubmit } from './js/formHandler'
 import { onBlur } from './js/formHandler'
 import { nlpRequest } from './js/apiHandler'
+import { checkToTop } from './js/app'
 import './js/app'
 
 //import scss files
@@ -19,4 +20,5 @@ export {
     handleSubmit,
     onBlur,
     nlpRequest,
+    checkToTop
 }

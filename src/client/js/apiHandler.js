@@ -16,6 +16,9 @@ function nlpRequest(formUrl) {
         prompt.setAttribute('style', 'display: none')
         displayData(data)
     })
+    .then(() => {
+        Client.checkToTop()
+    })
     .catch(err => {
         prompt.setAttribute('style', 'display: none')
         alert('Please check internet connection and URL used')
