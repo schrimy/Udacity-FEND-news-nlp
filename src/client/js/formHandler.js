@@ -30,7 +30,7 @@ function onBlur() {
 
 //performs input field validation
 function checkUrl(url) {
-    //regex developed by rodneyrehm (https://gist.github.com/rodneyrehm/8013067)
+    //regex pattern developed by rodneyrehm (https://gist.github.com/rodneyrehm/8013067) used 17/04/2020
     const url_pattern = /^(https?|ftp|torrent|image|irc):\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?$/i;
 
     if (url.match(url_pattern)) {
