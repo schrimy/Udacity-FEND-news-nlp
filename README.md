@@ -22,8 +22,8 @@ potential errors.
 
 * Upon opening the project run 'npm i' in the console to install all required dependencies.
 * To open up the dev environment run 'npm run build-dev'.
-* To open the production environment, first run 'npm build-prod
-' and when complete, run 'npm start'
+* To open the production environment run 'npm start' and open 'localhost:8081' in browser.
+* To build the files run 'npm build-prod' and it will produce a dist folder.
 * To run Jest tests, run 'npm test'.
 * To run the NLP API, enter a URL in the first input field and press submit.
 
