@@ -8,8 +8,13 @@ describe('display data' , () => {
           {'result': {'sentences': ['one sentence', 'two sentence']}}]
 
         document.body.innerHTML = `<div class="polarity"></div><div class="extra"></div><article></article>`
+        window.onload = () => {
+            pol = document.querySelector('.polarity')
+            extra = document.querySelector('.extra')
+            article = document.querySelector('article')
 
-        expect(displayData(data)).toBe(undefined)
+            expect(displayData(data)).toBe(undefined)
+        }
     })
 })
 
@@ -19,7 +24,12 @@ describe('display data' , () => {
         const data = undefined
 
         document.body.innerHTML = `<div class="polarity"></div><div class="extra"></div><article></article>`
+        window.onload = () => {
+            pol = document.querySelector('.polarity')
+            extra = document.querySelector('.extra')
+            article = document.querySelector('article')
 
-        expect(displayData(data)).toBe(undefined)
+            expect(displayData(data)).toBe(undefined)
+        }
     })
 })
