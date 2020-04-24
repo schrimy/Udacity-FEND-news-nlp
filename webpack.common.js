@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack')
+//Not adding service workers here as we don't want a cached page for the dev environemnt
 
 module.exports = {
     entry: './src/client/index.js',

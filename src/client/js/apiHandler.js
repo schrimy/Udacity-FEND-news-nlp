@@ -10,8 +10,8 @@ function nlpRequest(formUrl) {
     prompt.setAttribute('style', 'display: block')
 
     clearData()
-
-    postData('/apiRequest', {url: formUrl})
+    //call to port 8081 allows server access to both dev and prod builds
+    postData('http://localhost:8081/apiRequest', {url: formUrl})
     .then((data) => {
         prompt.setAttribute('style', 'display: none')
         displayData(data)
